@@ -39,9 +39,7 @@ public class ScoreManager : MonoBehaviour
 
     IEnumerator HandleScore()
     {
-        ball.SetActive(false);
         yield return StartCoroutine(ShowCountdown(3));
-        ball.SetActive(true);
         CheckGameOver();
     }
 
@@ -77,7 +75,6 @@ public class ScoreManager : MonoBehaviour
             scorePlayer2 = 0;
             UpdateScoreText(null);
             Debug.Log($"Scores reset to {scorePlayer1}-{scorePlayer2}");
-            ball.SetActive(false);
         }
     }
 

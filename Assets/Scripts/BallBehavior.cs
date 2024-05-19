@@ -9,7 +9,6 @@ public class BallBehavior : MonoBehaviour
     public ScoreManager scoreManager;
     public int player1Wins = -1;
     public CameraShake cameraShake;
-
     public AudioSource hitPlayerSource;
 
     void Start()
@@ -28,6 +27,13 @@ public class BallBehavior : MonoBehaviour
     void ResetBallPosition()
     {
         transform.position = Vector3.zero;
+        rb.velocity = Vector3.zero;  // Ensure the ball stays still
+        StartCoroutine(WaitAndLaunchBall());
+    }
+
+    private IEnumerator WaitAndLaunchBall()
+    {
+        yield return new WaitForSeconds(3);
         LaunchBall();
     }
 
@@ -71,6 +77,7 @@ public class BallBehavior : MonoBehaviour
         {
             Bounce(collision);
             hitPlayerSource.Play();
+
             // Trigger the camera shake effect
             if (cameraShake != null)
             {
@@ -103,4 +110,5 @@ public class BallBehavior : MonoBehaviour
         return Color.HSVToRGB(hue, saturation, value);
     }
 }
+
 

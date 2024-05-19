@@ -1550,7 +1550,7 @@ AudioSource:
   m_GameObject: {fileID: 1204165859}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7905276373914076879, guid: 5d3a820fce30dff40b467a88c710ef6c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 65d4f0f2099e4924aa7bda1ecbb7c44b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
@@ -1832,7 +1832,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.4
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
