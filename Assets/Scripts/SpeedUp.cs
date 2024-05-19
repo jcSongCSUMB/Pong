@@ -6,11 +6,16 @@ public class SpeedUp : MonoBehaviour
 {
     public float maxSpeed = 20f;
     public float speedMultiplier = 1.5f;
+    
+    public AudioSource hitSpeedUp;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ball"))
         {
+            
+            hitSpeedUp.Play();
+            
             BallBehavior ball = other.gameObject.GetComponent<BallBehavior>();
             if (ball != null)
             {

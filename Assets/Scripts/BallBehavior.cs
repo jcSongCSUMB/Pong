@@ -8,7 +8,9 @@ public class BallBehavior : MonoBehaviour
     private Rigidbody rb;
     public ScoreManager scoreManager;
     public int player1Wins = -1;
-    public CameraShake cameraShake;  // Reference to the CameraShake script
+    public CameraShake cameraShake;
+
+    public AudioSource hitPlayerSource;
 
     void Start()
     {
@@ -68,7 +70,7 @@ public class BallBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Bounce(collision);
-
+            hitPlayerSource.Play();
             // Trigger the camera shake effect
             if (cameraShake != null)
             {
